@@ -1,16 +1,17 @@
-<!DOCTYPE html>
 <html>
 	<head>
-		<title>Toronto Concert Calendar</title>
-		<script type='text/javascript' src='http://localhost/tablesorter/jquery-latest.js'></script>
-		<script type='text/javascript' src='http://localhost/tablesorter/jquery.tablesorter.js'></script>
-		<link rel="stylesheet" href="css/table.css" type="text/css"/>
-		<link rel="stylesheet" href="css/list.css" type="text/css"/>		
+		<!-- DataTables CSS -->
+		<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.css">
+		  
+		<!-- jQuery -->
+		<script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		  
+		<!-- DataTables -->
+		<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.js"></script>
 	</head>
 	<body>
-		<div id="s">
-			<input class="search" placeholder="Search" />			
-			<table id='myTable' class='tablesorter'>
+		<div id="s">			
+			<table id='myTable'>
 			<!-- You must include THEAD and TBODY tags (<th> tags in head are necessary) -->
 				<thead>
 					<tr>
@@ -21,52 +22,39 @@
 					</tr>
 				</thead>
 				<!-- IMPORTANT, class="list" have to be at tbody -->
-				<tbody class="list">
+				<tbody>
 					<tr>
-						<td class='artist'>54-40 + The Grapes Of Wrath</td>
-						<td class='venue'>Danforth Music Hall</td>
-						<td class='date'>Sat. Oct 4</td>
-						<td class='price'>$31.00</td>
+						<td>54-40 + The Grapes Of Wrath</td>
+						<td>Danforth Music Hall</td>
+						<td>Sat. Oct 4</td>
+						<td>$31.00</td>
 
 					</tr>
 					<tr>
-						<td class='artist'>The 1975</td>
-						<td class='venue'>Kool Haus</td>
-						<td class='date'>Sun. Nov 2</td>
-						<td class='price'>SOLD OUT</td>
+						<td>The 1975</td>
+						<td>Kool Haus</td>
+						<td>Sun. Nov 2</td>
+						<td>SOLD OUT</td>
 					</tr>
 					<tr>
-						<td class='artist'>2001: A Space Odyssey (ft. Pat Mahoney)</td>
-						<td class='venue'>99 Sudbury</td>
-						<td class='date'>Fri. Sep 12</td>
-						<td class='price'>SOLD OUT</td>
+						<td>2001: A Space Odyssey (ft. Pat Mahoney)</td>
+						<td>99 Sudbury</td>
+						<td>Fri. Sep 12</td>
+						<td>SOLD OUT</td>
 					  </tr>
 					  <tr>
-						<td class='artist'>Abandon All Ships</td>
-						<td class='venue'>Mod Club</td>
-						<td class='date'>Thu. Sep 25</td>
-						<td class='price'>$15.00</td>
+						<td>Abandon All Ships</td>
+						<td>Mod Club</td>
+						<td>Thu. Sep 25</td>
+						<td>$15.00</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-		<script type="text/javascript" src="http://listjs.com/no-cdn/list.js"></script>		
-		<!-- need to load filter.js at end of file and after list.js -->
-		<!-- <script type="text/javascript" src="js/filter.js"></script>  -->
 		<script>
-			$(document).ready(function() {
-					console.log('ready');
-					
-					$("#myTable").tablesorter(); 
-				} 
-			);
-		</script>
-		<script>
-			var options = {
-			  valueNames: [ 'artist', 'venue', 'date', 'price' ]
-			};
-
-			var userList = new List('s', options);
+			$(document).ready( function () {
+				$('myTable').DataTable();
+			} );
 		</script>
 	</body>
 </html>
